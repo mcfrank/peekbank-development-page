@@ -1,11 +1,13 @@
 ```{r}
-# dataset <- redivis::organization("datapages")$dataset("palmerpenguins")
-# penguins <- dataset$table("penguins")$to_tibble()
-# ojs_define(data = penguins)
+dataset <- redivis::user("mcfrank")$dataset("peekbank_development")
+trials <- dataset$table("trials")$to_tibble()
+participants <- dataset$table("participants")$to_tibble()
+ojs_define(data = trials)
+ojs_define(trial_data = trials)
 ```
 
 ```{r}
-quarto <- yaml::read_yaml("_quarto.yml")
+# quarto <- yaml::read_yaml("_quarto.yml")
 
 # load data from redivis table if specified in yaml
 if ("redivis" %in% names(quarto) &&

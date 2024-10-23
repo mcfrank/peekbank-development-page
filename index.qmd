@@ -1,19 +1,13 @@
 ---
-title: "Palmer Penguins"
-subtitle: "A great dataset for data exploration & visualization"
+title: "Peekbank Development"
+subtitle: "Visualizations and data for analysis of children's word recognition in early childhood"
 description: |
-  Data were collected and made available by [Dr. Kristen Gorman](https://www.uaf.edu/cfos/people/faculty/detail/kristen-gorman.php) and the [Palmer Station, Antarctica LTER](https://pallter.marine.rutgers.edu/), a member of the [Long Term Ecological Research Network](https://lternet.edu/).
+  Data from [Peekbank](http://peekbank.stanford.edu)
 ---
 
-::: {layout-ncol=2}
-![Artwork by \@allison_horst](images/lter_penguins.png)
+{{< include plots.qmd >}}
 
-![](images/culmen_depth.png)
-:::
-
-{{< include _load-data.qmd >}}
-
-{{< include _scatter_hist.qmd >}}
+<!-- {{< include _scatter_hist.qmd >}} -->
 
 <!-- {{< include _scatter.qmd >}} -->
 
