@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Peekbank Development",
+    "section": "",
+    "text": "The goal of palmerpenguins is to provide a great dataset for data exploration & visualization, as an alternative to iris.\nData were collected and made available by Dr. Kristen Gorman and the Palmer Station, Antarctica LTER, a member of the Long Term Ecological Research Network. The dataset contains data for 344 penguins. There are 3 different species of penguins in this dataset, collected from 3 islands in the Palmer Archipelago, Antarctica.\nData are available by CC-0 license in accordance with the Palmer Station LTER Data Policy and the LTER Data Access Policy for Type I data."
+  },
+  {
+    "objectID": "about.html#palmerpenguins",
+    "href": "about.html#palmerpenguins",
+    "title": "Peekbank Development",
+    "section": "",
+    "text": "The goal of palmerpenguins is to provide a great dataset for data exploration & visualization, as an alternative to iris.\nData were collected and made available by Dr. Kristen Gorman and the Palmer Station, Antarctica LTER, a member of the Long Term Ecological Research Network. The dataset contains data for 344 penguins. There are 3 different species of penguins in this dataset, collected from 3 islands in the Palmer Archipelago, Antarctica.\nData are available by CC-0 license in accordance with the Palmer Station LTER Data Policy and the LTER Data Access Policy for Type I data."
+  },
+  {
+    "objectID": "plots.html",
+    "href": "plots.html",
+    "title": "Peekbank Development",
+    "section": "",
+    "text": "d = transpose(data)\n\nviewof scatter = Plot.plot({\n  style: { fontFamily: \"var(--sans-serif)\" },\n  inset: 8,\n   grid: true,\n      x: { tickFormat: \"\" },\n  color: { legend: true },\n  marks: [\n    Plot.dot(d, {\n      x: x_var,\n      y: y_var,\n      stroke: color_var\n    }),\n    Plot.linearRegressionY(d, {\n     x: x_var,\n     y: y_var,\n     stroke: color_var,\n     ci: 0\n    }),\n    Plot.linearRegressionY(d, {\n     x: x_var,\n     y: y_var\n    })\n  ]\n})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nviewof x_var = Inputs.select( [\"age\",\"log_age\"], {value: \"log_age\", label: \"X axis\"})\n\nviewof y_var = Inputs.select( [\"rt\",\"rt_var\",\"long_window_accuracy\",\"long_window_acc_var\",\"prod\",\"comp\"], {value: \"rt\", label: \"Y axis\"})\n\nviewof color_var = Inputs.select([\"dataset_name\",\"n_trials\"], {value: \"dataset_name\", label: \"Color\"})"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Peekbank Development",
+    "section": "",
+    "text": "d = transpose(data)\n\nviewof scatter = Plot.plot({\n  style: { fontFamily: \"var(--sans-serif)\" },\n  inset: 8,\n   grid: true,\n      x: { tickFormat: \"\" },\n  color: { legend: true },\n  marks: [\n    Plot.dot(d, {\n      x: x_var,\n      y: y_var,\n      stroke: color_var\n    }),\n    Plot.linearRegressionY(d, {\n     x: x_var,\n     y: y_var,\n     stroke: color_var,\n     ci: 0\n    }),\n    Plot.linearRegressionY(d, {\n     x: x_var,\n     y: y_var\n    })\n  ]\n})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nviewof x_var = Inputs.select( [\"age\",\"log_age\"], {value: \"log_age\", label: \"X axis\"})\n\nviewof y_var = Inputs.select( [\"rt\",\"rt_var\",\"long_window_accuracy\",\"long_window_acc_var\",\"prod\",\"comp\"], {value: \"rt\", label: \"Y axis\"})\n\nviewof color_var = Inputs.select([\"dataset_name\",\"n_trials\"], {value: \"dataset_name\", label: \"Color\"})"
+  },
+  {
+    "objectID": "analysis.html",
+    "href": "analysis.html",
+    "title": "Peekbank Development",
+    "section": "",
+    "text": "You can access the peekbank_development data programmatically using the Redivis API for R or Python.\n\nRPython\n\n\n\nInstall the redivis-r package:\n\ndevtools::install_github(\"redivis/redivis-r\")\n\nGenerate and set an API token.\nAccess the data:\n\nlibrary(redivis)\n\nuser &lt;- redivis::user(\"mcfrank\")\ndataset &lt;- user$dataset(\"peekbank_development\")\ntable &lt;- dataset$table(\"participants\")\n\n# Load table as tidyverse tibble\ndf &lt;- table$to_tibble()\nView documentation\n\n\n\nInstall the redivis-python client library:\n\npip install --upgrade redivis\n\nGenerate and set an API token.\nAccess the data:\n\nimport redivis\n\nuser = redivis.user(\"mcfrank\")\ndataset = user.dataset(\"peekbank_development\")\ntable = dataset.table(\"participants\")\n\n# Load table as a dataframe\ndf = table.to_pandas_dataframe()\nView documentation"
+  },
+  {
+    "objectID": "analysis.html#programmatic-access",
+    "href": "analysis.html#programmatic-access",
+    "title": "Peekbank Development",
+    "section": "",
+    "text": "You can access the peekbank_development data programmatically using the Redivis API for R or Python.\n\nRPython\n\n\n\nInstall the redivis-r package:\n\ndevtools::install_github(\"redivis/redivis-r\")\n\nGenerate and set an API token.\nAccess the data:\n\nlibrary(redivis)\n\nuser &lt;- redivis::user(\"mcfrank\")\ndataset &lt;- user$dataset(\"peekbank_development\")\ntable &lt;- dataset$table(\"participants\")\n\n# Load table as tidyverse tibble\ndf &lt;- table$to_tibble()\nView documentation\n\n\n\nInstall the redivis-python client library:\n\npip install --upgrade redivis\n\nGenerate and set an API token.\nAccess the data:\n\nimport redivis\n\nuser = redivis.user(\"mcfrank\")\ndataset = user.dataset(\"peekbank_development\")\ntable = dataset.table(\"participants\")\n\n# Load table as a dataframe\ndf = table.to_pandas_dataframe()\nView documentation"
+  }
+]
