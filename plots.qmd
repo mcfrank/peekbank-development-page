@@ -1,0 +1,47 @@
+
+```{r}
+dataset <- redivis::user("mcfrank")$dataset("peekbank_development")
+# trials <- dataset$table("trials")$to_tibble()
+# ojs_define(trial_data = trials)
+participants_data <- dataset$table("participants")$to_tibble()
+ojs_define(data = participants_data)
+```
+
+
+```{ojs}
+d = transpose(data)
+
+viewof scatter = Plot.plot({
+  style: { fontFamily: "var(--sans-serif)" },
+  inset: 8,
+   grid: true,
+      x: { tickFormat: "" },
+  color: { legend: true },
+  marks: [
+    Plot.dot(d, {
+      x: x_var,
+      y: y_var,
+      stroke: color_var
+    }),
+    Plot.linearRegressionY(d, {
+     x: x_var,
+     y: y_var,
+     stroke: color_var,
+     ci: 0
+    }),
+    Plot.linearRegressionY(d, {
+     x: x_var,
+     y: y_var
+    })
+  ]
+})
+```
+
+
+```{ojs}
+viewof x_var = Inputs.select( ["age","log_age"], {value: "log_age", label: "X axis"})
+
+viewof y_var = Inputs.select( ["rt","rt_var","long_window_accuracy","long_window_acc_var","prod","comp"], {value: "rt", label: "Y axis"})
+
+viewof color_var = Inputs.select(["dataset_name","n_trials"], {value: "dataset_name", label: "Color"})
+```
